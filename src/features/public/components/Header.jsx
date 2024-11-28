@@ -40,7 +40,7 @@ const Header = () => {
           </div>
           <Button variant="outline">Sign in</Button>
           <Button className="bg-emerald-500 hover:bg-emerald-600">
-            Sign up
+            Apply now
           </Button>
         </div>
       </nav>

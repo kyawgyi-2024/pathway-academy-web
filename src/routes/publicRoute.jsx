@@ -6,6 +6,12 @@ const ContactUsPage = lazy(() =>
 );
 const FAQPage = lazy(() => import("../features/public/pages/FAQPage"));
 const SupportPage = lazy(() => import("../features/public/pages/SupportPage"));
+const PrivacyPolicyPage = lazy(() =>
+  import("../features/public/pages/PrivacyPolicyPage")
+);
+const TermsAndConditionPage = lazy(() =>
+  import("../features/public/pages/TermsAndConditionPage")
+);
 
 const publicRoute = [
   {
@@ -27,6 +33,14 @@ const publicRoute = [
   {
     path: "support",
     element: <SupportPage />,
+  },
+  {
+    path: "privacy-policy",
+    element: <PrivacyPolicyPage />,
+  },
+  {
+    path: "termsandconditions",
+    element: <TermsAndConditionPage />,
   },
 ];
 

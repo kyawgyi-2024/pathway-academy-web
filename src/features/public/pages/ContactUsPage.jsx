@@ -1,20 +1,22 @@
-import React from "react";
+
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
+import herocontact from "../../../assets/contact-us/heroSection.png"
+import getintouch from "../../../assets/contact-us/getInTouch.png"
 
 const ContactUsPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[300px] bg-gradient-to-r from-gray-900 to-gray-700 flex items-center justify-center">
+      <section className="relative h-[300px] flex items-center justify-center">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="/placeholder.svg?height=300&width=1200"
-            alt="Phone receivers background"
-            className="w-full h-full object-cover opacity-20"
+            src={herocontact}
+            alt="contact us"
+            className="w-full h-full object-cover"
           />
         </div>
         <h1 className="text-4xl font-bold text-white relative z-10">
@@ -77,8 +79,8 @@ const ContactUsPage = () => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
             <img
-              src="/placeholder.svg?height=400&width=400"
-              alt="Contact illustration"
+              src={getintouch}
+              alt="getintouch"
               className="w-full max-w-md mx-auto"
             />
           </div>

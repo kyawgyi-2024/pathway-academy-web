@@ -11,7 +11,7 @@ import google from "../../../assets/Login/google.png";
 import facebook from "../../../assets/Login/facebook.png";
 import apple from "../../../assets/Login/apple.png";
 
-const SignUpPage = () => {
+const ApplyNowPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -142,4 +142,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default ApplyNowPage;

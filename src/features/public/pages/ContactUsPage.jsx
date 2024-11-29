@@ -1,11 +1,11 @@
-
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import herocontact from "../../../assets/contact-us/heroSection.png"
-import getintouch from "../../../assets/contact-us/getInTouch.png"
+import herocontact from "../../../assets/contact-us/heroSection.png";
+import getintouch from "../../../assets/contact-us/getInTouch.png";
+import Container from "../../../components/Container"
 
 const ContactUsPage = () => {
   return (
@@ -119,24 +119,26 @@ const ContactUsPage = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="bg-emerald-500 py-12 px-4 md:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="text-white">
-            <h2 className="text-2xl font-bold mb-2">Join Our News Letter</h2>
-            <p className="text-emerald-50">
-              Stay updated with our latest news and updates
-            </p>
+      {/* <Container>
+        <section className="bg-emerald-500 py-12 px-4 md:px-6 lg:px-8 rounded translate-y-10 z-20 relative">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-white">
+              <h2 className="text-2xl font-bold mb-2">Join Our News Letter</h2>
+              <p className="text-emerald-50">
+                Stay updated with our latest news and updates
+              </p>
+            </div>
+            <div className="flex w-full max-w-md gap-2">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                className="bg-white"
+              />
+              <Button variant="secondary">Subscribe Now</Button>
+            </div>
           </div>
-          <div className="flex w-full max-w-md gap-2">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              className="bg-white"
-            />
-            <Button variant="secondary">Subscribe Now</Button>
-          </div>
-        </div>
-      </section>
+        </section>
+      </Container> */}
     </div>
   );
 };

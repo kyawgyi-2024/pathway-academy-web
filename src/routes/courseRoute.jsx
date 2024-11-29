@@ -1,6 +1,5 @@
 import { lazy } from "react";
 
-const CoursePage = lazy(() => import("../features/courses/pages/CoursePage"));
 const CourseDetailOverview = lazy(() =>
   import("../features/courses/components/CourseDetailOverview")
 );
@@ -18,10 +17,7 @@ const CourseDetailCurriculum = lazy(() =>
 );
 
 const courseRoute = [
-  {
-    path: "course",
-    element: <CoursePage />,
-  },
+  
   {
     path: "course-detailoverview",
     element: <CourseDetailOverview />,

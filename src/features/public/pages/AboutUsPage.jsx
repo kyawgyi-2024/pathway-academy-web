@@ -297,7 +297,7 @@ const AboutUsPage = () => {
               <img
                 src={facilities}
                 alt="Student using platform"
-                fill
+                
                 className="object-cover rounded"
               />
             </div>
@@ -359,53 +359,6 @@ const AboutUsPage = () => {
           </div>
         </div>
       </section>
-      {/* Testimonials */}
-      {/* <section className="py-16 px-4 md:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Some valuable feedback from our <br /> students
-          </h2>
-          <div className="relative">
-            <div className="flex gap-6 overflow-x-auto pb-8">
-              {Array.from({ length: 4 }).map((_, index) => (
-                <Card key={index} className="min-w-[300px] md:min-w-[350px]">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 relative">
-                        <Image
-                          src="/placeholder.svg"
-                          alt={`Student ${index + 1}`}
-                          fill
-                          className="rounded-full object-cover"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold">Dr. Maxwell</h3>
-                        <div className="flex text-yellow-400">★★★★★</div>
-                      </div>
-                    </div>
-                    <p className="text-gray-600">
-                      "Great course platform with excellent content. The
-                      instructors are knowledgeable and the material is
-                      well-presented."
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <div className="absolute top-1/2 -left-4 -translate-y-1/2">
-              <Button size="icon" variant="outline" className="rounded-full">
-                <ChevronLeft className="h-4 w-4" />
-              </Button>
-            </div>
-            <div className="absolute top-1/2 -right-4 -translate-y-1/2">
-              <Button size="icon" variant="outline" className="rounded-full">
-                <ChevronRight className="h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       {/* Testimonials */}
       <section className="py-16 px-4 md:px-6 lg:px-8">
@@ -432,7 +385,7 @@ const AboutUsPage = () => {
                           <img
                             src={testimonial.image}
                             alt={testimonial.name}
-                            fill
+                            
                             className="rounded-full object-cover"
                           />
                         </div>

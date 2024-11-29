@@ -1,4 +1,5 @@
 import { lazy } from "react";
+const CoursesPage = lazy(() => import("../features/public/pages/CoursesPage"));
 const HomePage = lazy(() => import("../features/public/pages/HomePage"));
 const AboutUsPage = lazy(() => import("../features/public/pages/AboutUsPage"));
 const ContactUsPage = lazy(() =>
@@ -12,6 +13,9 @@ const PrivacyPolicyPage = lazy(() =>
 const TermsAndConditionPage = lazy(() =>
   import("../features/public/pages/TermsAndConditionPage")
 );
+const BlogPage = lazy(() =>
+  import("../features/public/pages/BlogPage")
+);
 
 const publicRoute = [
   {
@@ -21,6 +25,14 @@ const publicRoute = [
   {
     path: "about-us",
     element: <AboutUsPage />,
+  },
+  {
+    path: "courses",
+    element: <CoursesPage />,
+  },
+  {
+    path: "blog",
+    element: <BlogPage />,
   },
   {
     path: "contact-us",
@@ -39,7 +51,7 @@ const publicRoute = [
     element: <PrivacyPolicyPage />,
   },
   {
-    path: "termsandconditions",
+    path: "terms-condition",
     element: <TermsAndConditionPage />,
   },
 ];

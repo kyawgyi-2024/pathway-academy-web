@@ -13,8 +13,9 @@ const PrivacyPolicyPage = lazy(() =>
 const TermsAndConditionPage = lazy(() =>
   import("../features/public/pages/TermsAndConditionPage")
 );
-const BlogPage = lazy(() =>
-  import("../features/public/pages/BlogPage")
+const BlogPage = lazy(() => import("../features/public/pages/BlogPage"));
+const BlogDetailPage = lazy(() =>
+  import("../features/blog/components/BlogDetailPage")
 );
 
 const publicRoute = [
@@ -33,6 +34,10 @@ const publicRoute = [
   {
     path: "blog",
     element: <BlogPage />,
+  },
+  {
+    path: "blog-detail",
+    element: <BlogDetailPage />,
   },
   {
     path: "contact-us",

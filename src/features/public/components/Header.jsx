@@ -35,7 +35,7 @@ const Header = () => {
         ">
           <div className="flex items-center gap-6">
             <nav className="cursor-pointer" onClick={() => navHandler("/")}>
-              <img src={Logo} className="h-10 w-20" />
+              <img src={Logo} className=" w-30" />
             </nav>
             <button
               onClick={toggleSidebar}

@@ -193,12 +193,12 @@ const CourseDetailOverview = () => {
           <div className="lg:col-span-1">
             <Card className="p-6 sticky top-6">
               <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
-                <Image
+                {/* <Image
                   src="/placeholder.svg"
                   alt="Course preview"
                   fill
                   className="object-cover"
-                />
+                /> */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
                     <svg
@@ -279,12 +279,12 @@ const CourseDetailOverview = () => {
               <Card key={index} className="overflow-hidden">
                 <div className="relative">
                   <div className="relative h-48">
-                    <Image
+                    {/* <Image
                       src={course.image}
                       alt={course.title}
                       fill
                       className="object-cover"
-                    />
+                    /> */}
                   </div>
                   <button className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center">
                     <Heart className="w-4 h-4" />

@@ -15,6 +15,9 @@ const CourseDetailFaq = lazy(() =>
 const CourseDetailCurriculum = lazy(() =>
   import("../features/courses/components/CourseDetailCurriculum")
 );
+const CurriculumDetailPage = lazy(() =>
+  import("../features/courses/components/Curriculum/pages/CurriculumDetailPage")
+);
 
 const courseRoute = [
   
@@ -37,6 +40,10 @@ const courseRoute = [
   {
     path: "course-detailcurriculum",
     element: <CourseDetailCurriculum />,
+  },
+  {
+    path: "course-detail-page",
+    element: <CurriculumDetailPage />,
   },
 ];
 

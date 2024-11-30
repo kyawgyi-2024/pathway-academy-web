@@ -36,7 +36,7 @@ const NotFound = () => {
             or head back to home.
           </p>
           <div className="mt-10 flex items-center justify-center gap-4">
-            <Button className="bg-black text-white">
+            <Button className="bg-black text-white" variant="secondary">
               Help Center <LucideArrowRight />{" "}
             </Button>
             <Link to={"/"}>

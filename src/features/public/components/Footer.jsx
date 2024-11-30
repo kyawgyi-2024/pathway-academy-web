@@ -18,10 +18,9 @@ import Container from "../../../components/Container";
 const Footer = () => {
   return (
     <div className=" mt-auto">
-
       {/* Newsletter Section */}
       <Container>
-        <section className="bg-emerald-500 py-12 px-4 md:px-6 lg:px-8 rounded translate-y-8 z-20 relative">
+        {/* <section className="bg-emerald-500 py-12 px-4 md:px-6 lg:px-8 rounded translate-y-8 z-20 relative">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-white">
               <h2 className="text-2xl font-bold mb-2">Join Our News Letter</h2>
@@ -38,7 +37,46 @@ const Footer = () => {
               <Button variant="secondary">Subscribe Now</Button>
             </div>
           </div>
-        </section>
+        </section> */}
+        <div className="bg-emerald-500 py-14 px-4 md:px-6 lg:px-8 rounded translate-y-8 z-20 relative">
+          <div className="mx-auto max-w-7xl px-4">
+            <div className="grid gap-8 md:grid-cols-2">
+              <div>
+                <h2 className="text-2xl font-bold text-white">
+                  Join Our News Letter
+                </h2>
+                <div className="mt-4 flex gap-2">
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="flex-1 rounded-md px-4 py-2"
+                  />
+                  <button className="rounded-md bg-gray-900 px-4 py-2 text-white">
+                    Subscribe Now
+                  </button>
+                </div>
+              </div>
+              <div className="space-y-4 text-white text-end">
+                <div className="flex items-center gap-2">
+                  <Phone className="h-5 w-5" />
+                  <span>Call on: 0786 778 375 028</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="h-5 w-5" />
+                  <span>Time: 9am to 5pm Sunday-Friday</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-5 w-5" />
+                  <span>759 Pine Drive, Apt. 38</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="h-5 w-5" />
+                  <span>PathwayC7@gmail.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </Container>
 
       {/* Footer */}

@@ -4,11 +4,28 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { BookAIcon, BookDashed, BookOpen, LucideStar, Star } from "lucide-react";
+import {
+  MapPin,
+  Smile,
+  BookOpen,
+  BookOpenCheck,
+  LucideStar,
+  Star,
+  ChartColumn,
+  SquarePen,
+  Hotel,
+  CodeXml,
+  Figma,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 import {
+  Users,
+  ChartLine,
+  School,
+  GraduationCap,
   ChevronLeft,
   PieChart,
   Video,
@@ -57,6 +74,7 @@ const HomePage = () => {
       category: "Video editing",
       lessons: 18,
       duration: "2hr 30min",
+      badge: "Beginner",
       rating: 4.5,
       students: 4500,
       price: "$12.00",
@@ -72,6 +90,7 @@ const HomePage = () => {
       description:
         "Introduction to business planning and strategic decision-making. Gain practical insights into crafting effective strategies to achieve business success",
       category: "Business",
+      badge: "Advance",
       lessons: 24,
       duration: "2hr 30min",
       rating: 4.8,
@@ -89,6 +108,7 @@ const HomePage = () => {
       description:
         "Develop writing skills to craft compelling articles, blogs, and copy for online platforms. Perfect for aspiring writers and marketers.",
       category: "Content writing",
+      badge: "Intermediate",
       lessons: 15,
       duration: "2hr 30min",
       rating: 4.6,
@@ -106,6 +126,7 @@ const HomePage = () => {
       description:
         "Build responsive and dynamic websites with practical lessons on HTML, CSS, JavaScript, and popular frameworks like React.",
       category: "Development",
+      badge: "Beginner",
       lessons: 32,
       duration: "2hr 30min",
       rating: 4.7,
@@ -123,6 +144,7 @@ const HomePage = () => {
       description:
         "Boost confidence in Spanish with an innovative course designed to improve vocabulary, grammar, and conversational skills.",
       category: "Language",
+      badge: "Beginner",
       lessons: 20,
       duration: "2hr 30min",
       rating: 4.5,
@@ -140,6 +162,7 @@ const HomePage = () => {
       description:
         "Master the principles of responsive web design websites. Introduction to HTML, CSS, and fundamental user interface layouts.",
       category: "Web Design",
+      badge: "Beginner",
       lessons: 25,
       duration: "2hr 30min",
       rating: 4.9,
@@ -187,7 +210,7 @@ const HomePage = () => {
     // },
 
     // Add more courses as needed...
-  ];
+  ]; //coures
   const faqs = [
     {
       question: "What types of courses do you offer?",
@@ -310,13 +333,15 @@ const HomePage = () => {
               <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600">
                 Learn more
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-white/10 text-white hover:bg-white/20 border-white/20"
-              >
-                Our courses
-              </Button>
+              <Link to={"/courses"}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="bg-white/10 text-white hover:bg-white/20 border-white/20"
+                >
+                  Our courses
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -353,49 +378,13 @@ const HomePage = () => {
       </section>
 
       {/* Course Categories */}
-      {/* <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8">
-            Our Course Categories
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { label: "Digital Marketing", icon: PieChart },
-              { label: "Video Editing", icon: Video },
-              { label: "Content Writing", icon: FileText },
-              { label: "Business", icon: Briefcase },
-              { label: "Language", icon: Globe },
-              { label: "Development", icon: Code },
-              { label: "Web Design", icon: Layout },
-              { label: "Photography", icon: Camera },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-2">
-                  <span className="text-emerald-500 text-2xl">{item.icon}</span>
-                </div>
-                <span className="text-sm font-medium">{item.label}</span>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Button
-              variant="outline"
-              className="text-emerald-500 border-emerald-500 hover:bg-emerald-50"
-            >
-              View All Categories
-            </Button>
-          </div>
-        </div>
-      </section> */}
+
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-8">
             Our Course Categories
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {categories.map(({ label, icon: Icon }, index) => (
               <div
                 key={index}
@@ -409,7 +398,74 @@ const HomePage = () => {
                 </span>
               </div>
             ))}
+          </div> */}
+
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[
+                {
+                  title: "Digital Marketing",
+                  label: "5 Courses",
+                  icon: <ChartColumn className=" text-emerald-500" />,
+                },
+                {
+                  title: "Video Editor",
+                  label: "10 Courses",
+                  icon: <Video className=" text-emerald-500" />,
+                },
+                {
+                  title: "Content Writing",
+                  label: "5 Courses",
+                  icon: <SquarePen className=" text-emerald-500" />,
+                },
+                {
+                  title: "Business",
+                  label: "15 Courses",
+                  icon: <Hotel className=" text-emerald-500" />,
+                },
+                {
+                  title: "Language",
+                  label: "5 Courses",
+                  icon: <Globe className=" text-emerald-500" />,
+                },
+                {
+                  title: "develpment",
+                  label: "5 Courses",
+                  icon: <CodeXml className=" text-emerald-500" />,
+                },
+                {
+                  title: "Web Design",
+                  label: "5 Courses",
+                  icon: <Figma className=" text-emerald-500" />,
+                },
+                {
+                  title: "Photography",
+                  label: "5 Courses",
+                  icon: <Camera className=" text-emerald-500" />,
+                },
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="text-start bg-[#EFFAF4] p-3 rounded shadow-md"
+                >
+                  <div className="flex flex-row items-center justify-center gap-3">
+                    <div className="w-8 h-8 text-start">
+                      <span className="object-fit">
+                        {stat.icon}
+                      </span>
+                    </div>
+                    <div className=" text-end">
+                      <p className="text-xl md:text-xl font-bold text-black text-end">
+                        {stat.title}
+                      </p>
+                      <p className="text-gray-800 mt-2 text-start">{stat.label}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+
           <div className="text-center mt-8">
             <Button
               variant="outline"
@@ -422,7 +478,7 @@ const HomePage = () => {
       </section>
 
       {/* Empowering Your Journey */}
-      <section className="bg-gray-100 py-16">
+      <section className=" py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0">
@@ -435,6 +491,7 @@ const HomePage = () => {
               />
             </div>
             <div className="md:w-1/2 md:pl-8">
+              <p className=" text-[#FD7E14] mb-3 text-sm italic">Welcome</p>
               <h2 className="text-3xl font-bold mb-4">
                 Empowering Your Journey to Success
               </h2>
@@ -451,38 +508,73 @@ const HomePage = () => {
                   "Earn recognized certifications",
                 ].map((item, index) => (
                   <li key={index} className="flex items-center">
-                    <ChevronRight className="text-emerald-500 mr-2" />
+                    <BadgeCheck className="text-emerald-500 mr-2" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
               <Button className="bg-emerald-500 hover:bg-emerald-600 text-white">
-                Start Learning Today
+                Apply now
               </Button>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
-            {[
-              { number: "10K+", label: "Active Students" },
-              { number: "1600+", label: "Expert Instructors" },
-              { number: "15K+", label: "Courses Published" },
-              { number: "100K+", label: "Students Worldwide" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-emerald-500 mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
+          <section className="py-16 px-4 md:px-6 lg:px-8">
+            {/* Statistics */}
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 ">
+                {[
+                  {
+                    number: "10K+",
+                    label: "Total Achievement",
+                    icon: <ChartLine className="h-8 w-8 text-emerald-500" />,
+                  },
+                  {
+                    number: "16000+",
+                    label: "Total Students",
+                    icon: <Users className="h-8 w-8 text-emerald-500" />,
+                  },
+                  {
+                    number: "15K+",
+                    label: "Classes Complete",
+                    icon: <School className="h-8 w-8 text-emerald-500" />,
+                  },
+                  {
+                    number: "100K+",
+                    label: "Certified Teachers",
+                    icon: (
+                      <GraduationCap className="h-8 w-8 text-emerald-500" />
+                    ),
+                  },
+                ].map((stat, index) => (
+                  <div
+                    key={index}
+                    className="text-center bg-[#EFFAF4] p-3 rounded"
+                  >
+                    <div className="flex flex-row items-center justify-center gap-1">
+                      <div className="w-8 h-8">
+                        <span className=" w-full h-full object-contain">
+                          {stat.icon}
+                        </span>
+                      </div>
+                      <div className=" text-start">
+                        <span className="text-2xl md:text-3xl font-bold text-black">
+                          {stat.number}
+                        </span>
+                        <p className="text-gray-800 mt-2">{stat.label}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          </section>
         </div>
       </section>
 
       {/* Top Listed Courses */}
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h4 className=" justify-center items-center text-center">
+          <h4 className=" justify-center items-center text-center text-[#FD7E14]">
             {" "}
             Discover News
           </h4>
@@ -607,48 +699,60 @@ const HomePage = () => {
 
                   {/* Course Details */}
                   <div className="">
-                    <div className="flex justify-between">
-                      <div>
-                        <div className=" flex justify-between items-center mb-2">
-                          <badge>Beginner</badge>
-                          <span className="text-gray-400 hover:text-gray-600">
-                            <LucideHeart className="w-5 h-5" />
-                          </span>
-                        </div>
-                        <div className="flex justify-between text-sm text-gray-500">
-                          
-                           <div className=" flex items-center gap-1 mb-1">
-                           <span><BookOpen className="w-4 h-4" /></span>
-                           <span>{course.lessons} Lesson</span>
-                           </div>
-                          
-                          <div className="flex gap-1 items-center">
-                            <Clock className="w-4 h-4" />
-                            <span>{course.duration}</span>
-                          </div>
-                        </div>
-                        <h3 className="text-lg font-semibold text-emerald-500 hover:text-emerald-600 transition-colors">
-                          {course.title}
-                        </h3>
+                    <div className="">
+                      <div className="items-center flex justify-between mb-3">
+                        <Badge
+                          variant="secondary"
+                          className=" text-white bg-[#FD7E14]"
+                        >
+                          {course.badge}
+                        </Badge>
+                        <span className="text-gray-400 hover:text-gray-600 border border-gray-200 p-1 rounded-full">
+                          <LucideHeart className="w-5 h-5" />
+                        </span>
                       </div>
+                      <div className="text-sm flex items-center justify-between text-gray-500">
+                        <div className=" flex items-center gap-1 mb-1">
+                          <span>
+                            <BookOpenCheck className="w-4 h-4 text-[#FD7E14]" />
+                          </span>
+                          <span>{course.lessons} Lesson</span>
+                        </div>
+
+                        <div className="flex gap-1 items-center">
+                          <Clock className="w-4 h-4 text-[#FD7E14]" />
+                          <span>{course.duration}</span>
+                        </div>
+                      </div>
+                      <p className=" text-emerald-500 text-xl font-semibold">
+                        {course.title}
+                      </p>
+                      <div></div>
                     </div>
 
                     {/* <p className="text-gray-600 mt-2 flex-wrap overflow-hidden">
                       {course.description}
                     </p> */}
-                    <div className=" mt-3 flex justify-between border-b">
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
+                    <div className=" mt-3 flex justify-between items-center border-b">
+                      <div className="flex items-center gap-2">
+                        {/* Star Icons */}
+                        <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                        {/* {[...Array(5)].map((_, i) => (
                           <Star
                             key={i}
                             className={`w-4 h-4 ${
-                              i < Math.floor(course.rating)
+                              i < Math.floor(1)
                                 ? "text-yellow-400 fill-yellow-400"
                                 : "text-gray-300 fill-gray-300"
                             }`}
                           />
-                        ))}
+                        ))} */}
+                        {/* Numerical Rating */}
+                        <span className="text-sm text-gray-600">
+                          {course.rating}/5.0
+                        </span>
                       </div>
+
                       <span className="text-sm text-gray-500">
                         {course.students} Students
                       </span>
@@ -669,16 +773,18 @@ const HomePage = () => {
                           </span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <span className="text-sm text-gray-500">
+                          {/* <span className="text-sm text-gray-500">
                             {course.rating}
-                          </span>
+                          </span> */}
                         </div>
                       </div>
 
                       <div className="flex items-center gap-4">
                         <span
-                          className={`font-semibold ${
-                            course.price === "Free" ? "text-emerald-500" : ""
+                          className={` ${
+                            course.price === "Free"
+                              ? "text-emerald-600 font-semibold"
+                              : " text-emerald-400"
                           }`}
                         >
                           {course.price}
@@ -702,46 +808,6 @@ const HomePage = () => {
       </section>
 
       {/* Our Facilities */}
-      {/* <section className="bg-gray-100 py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-8 md:mb-0">
-              <img
-                src={Facility}
-                alt="Our facilities"
-                width={500}
-                height={400}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-            <div className="md:w-1/2 md:pl-8">
-              <h2 className="text-3xl font-bold mb-6">Our Facilities</h2>
-              <ul className="space-y-4">
-                {[
-                  "Interactive Learning Tools",
-                  "Personalized Study Plans",
-                  "Live Support & Guidance",
-                  "Mobile-Friendly Learning",
-                ].map((facility, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center text-white mr-3 mt-1">
-                      ✓
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">{facility}</h3>
-                      <p className="text-sm text-gray-600">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section> */}
       <section className="py-16 px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-center">
@@ -836,57 +902,6 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials */}
-      {/* <section className="bg-gray-100 py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8">
-            Some valuable feedback from our students
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "John Doe",
-                role: "Web Developer",
-                content:
-                  "The courses are well-structured and the instructors are very knowledgeable. I've learned so much in such a short time!",
-              },
-              {
-                name: "Jane Smith",
-                role: "Digital Marketer",
-                content:
-                  "The platform is user-friendly and the content is always up-to-date. It's been a great investment in my career.",
-              },
-              {
-                name: "Mike Johnson",
-                role: "Graphic Designer",
-                content:
-                  "I love the variety of courses available. It's helped me expand my skill set and take on new projects with confidence.",
-              },
-            ].map((testimonial, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Image
-                    src="/placeholder.svg"
-                    alt={testimonial.name}
-                    width={48}
-                    height={48}
-                    className="rounded-full mr-4"
-                  />
-                  <div>
-                    <h3 className="font-semibold">{testimonial.name}</h3>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
-                  </div>
-                </div>
-                <p className="text-gray-700">{testimonial.content}</p>
-                <div className="flex mt-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="text-yellow-400 w-5 h-5" />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       <section className="py-16 px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -954,7 +969,7 @@ const HomePage = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <p className="text-lg font-medium text-emerald-500 mb-4">FAQ</p>
+            <p className="text-lg font-medium text-[#FD7E14] mb-4">FAQ</p>
             <h2 className="text-3xl md:text-4xl font-bold">
               Popular Frequently Ask Questions
             </h2>

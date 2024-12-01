@@ -346,7 +346,7 @@ const HomePage = () => {
           </div>
 
           {/* Trustpilot Rating */}
-          <div className="mt-10 md:mt-0 md:absolute md:bottom-8 md:right-8 text-end">
+          <div className="mt-10 md:mt-0 md:absolute md:bottom-8 md:right-8 text-end duration-200 transition-transform hover:scale-95">
             <div className="bg-white rounded-lg p-4 shadow-lg max-w-xs md:max-w-sm">
               <p className=" flex gap-1 mb-2">
                 <span className=" text-emerald-500">
@@ -401,7 +401,7 @@ const HomePage = () => {
           </div> */}
 
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mx-auto">
               {[
                 {
                   title: "Digital Marketing",
@@ -446,11 +446,11 @@ const HomePage = () => {
               ].map((stat, index) => (
                 <div
                   key={index}
-                  className="text-start bg-[#EFFAF4] p-3 rounded shadow-md"
+                  className=" bg-[#EFFAF4] p-3 rounded shadow-md duration-200 transition-transform hover:scale-95"
                 >
-                  <div className="flex flex-row items-center justify-center gap-3">
+                  <div className="flex items-center text-center ms-3 my-2 gap-3">
                     <div className="w-8 h-8 text-start">
-                      <span className="object-fit">
+                      <span>
                         {stat.icon}
                       </span>
                     </div>
@@ -487,7 +487,7 @@ const HomePage = () => {
                 alt="Student success"
                 width={500}
                 height={400}
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg  transition-transform hover:scale-105"
               />
             </div>
             <div className="md:w-1/2 md:pl-8">
@@ -548,7 +548,7 @@ const HomePage = () => {
                 ].map((stat, index) => (
                   <div
                     key={index}
-                    className="text-center bg-[#EFFAF4] p-3 rounded"
+                    className="text-center bg-[#EFFAF4] p-3 rounded shadow-md transition-transform hover:scale-95"
                   >
                     <div className="flex flex-row items-center justify-center gap-1">
                       <div className="w-8 h-8">
@@ -688,11 +688,11 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {courses.map((course) => (
               <Card key={course.id} className="p-4">
-                <div className="grid grid-cols-1 md:flex-row gap-6">
+                <div className="grid grid-cols-1 md:flex-row gap-6 duration-200 transition-transform hover:scale-105">
                   {/* Course Image */}
-                  <div className="w-full">
+                  <div className="w-full relative">
                     <img src={course.image} alt={course.title} className="" />
-                    <span className="absolute top-2 left-2 bg-emerald-500 text-white px-2 py-1 rounded text-sm">
+                    <span className="absolute top-2 left-2 bg-emerald-500 text-white px-2 py-1 rounded text-xs">
                       {course.category}
                     </span>
                   </div>
@@ -811,7 +811,7 @@ const HomePage = () => {
       <section className="py-16 px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-center">
-            <div className="relative h-[500px] mb-7">
+            <div className="relative h-[500px] mb-7 transition-transform hover:scale-105 duration-200">
               <img
                 src={Facility}
                 alt="Student using platform"
@@ -908,14 +908,14 @@ const HomePage = () => {
           <h2 className="text-3xl font-bold text-center mb-12">
             Some valuable feedback from our <br /> students
           </h2>
-          <div className="relative mt-5">
+          <div className="relative mt-5 ">
             <div className="flex justify-center items-center gap-4">
               {testimonials.map((testimonial, index) => {
                 const isCenter = index === currentTestimonial;
                 return (
                   <Card
                     key={index}
-                    className={`bg-[#EFFAF4] transition-all mt-3 p-3 duration-300 ${
+                    className={`bg-[#EFFAF4] border hover:scale-95 duration-200 transition-all mt-3 p-3 ${
                       isCenter
                         ? " z-10 scale-105 opacity-100"
                         : "scale-90 opacity-40"

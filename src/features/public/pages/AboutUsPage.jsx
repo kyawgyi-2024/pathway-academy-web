@@ -81,7 +81,7 @@ const AboutUsPage = () => {
         <img
           src={herosection}
           alt="Background"
-          className="object-cover brightness-50 h-[400px] w-full"
+          className="object-cover h-[400px] w-full"
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
@@ -118,8 +118,11 @@ const AboutUsPage = () => {
                 description: "Earn unlimited certificates",
               },
             ].map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 mb-4">
+              <div
+                key={index}
+                className="text-center duration-200 transition-transform hover:scale-95"
+              >
+                <div className="inline-flex items-center  justify-center w-16 h-16 rounded-full bg-emerald-100 mb-4">
                   <item.icon className="w-8 h-8 text-emerald-600" />
                 </div>
                 <h3 className="font-semibold mb-2">{item.title}</h3>
@@ -133,7 +136,7 @@ const AboutUsPage = () => {
       <section className="py-16  px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px]">
+            <div className="relative h-[400px] duration-200 transition-transform hover:scale-95">
               <img
                 src={empoweringphoto}
                 alt="Student with books"
@@ -145,27 +148,21 @@ const AboutUsPage = () => {
                 Empowering Your Journey to Success
               </h2>
               <p className="text-gray-600 mb-6">
-                Our platform offers expertly crafted courses, personalized
+                "Our platform offers expertly crafted courses, personalized
                 learning paths, and expert-level support to help you reach your
-                goals faster.
+                goals faster".
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                  </div>
+                  <BadgeCheck className=" text-emerald-500" />
                   <span>Access to exclusive webinars and workshops</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                  </div>
+                  <BadgeCheck className=" text-emerald-500" />
                   <span>95% of students report skill improvement</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                  </div>
+                  <BadgeCheck className=" text-emerald-500" />
                   <span>Courses aligned with industry standards</span>
                 </li>
               </ul>
@@ -177,8 +174,8 @@ const AboutUsPage = () => {
         </div>
       </section>
       {/* Statistics */}
-      <section className="py-16 px-4 md:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 px-4 md:px-6 lg:px-8 mt-10">
+        <div className="max-w-7xl mx-auto ">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 ">
             {[
               {
@@ -202,7 +199,10 @@ const AboutUsPage = () => {
                 icon: <GraduationCap className="h-8 w-8 text-emerald-500" />,
               },
             ].map((stat, index) => (
-              <div key={index} className="text-center bg-[#EFFAF4] p-3 rounded">
+              <div
+                key={index}
+                className="text-center bg-[#EFFAF4] p-3 rounded shadow-md duration-200 transition-transform hover:scale-95"
+              >
                 <div className="flex flex-row items-center justify-center gap-1">
                   <div className="w-8 h-8">
                     <span className=" w-full h-full object-contain">
@@ -232,7 +232,7 @@ const AboutUsPage = () => {
             Learn from the best and achieve your goals with our exceptional
             instructors.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
             {[
               {
                 name: "Johns Than Doe",
@@ -259,7 +259,7 @@ const AboutUsPage = () => {
                 img: insfour,
               },
             ].map((instructor, index) => (
-              <Card key={index}>
+              <Card key={index} className="duration-200 transition-transform hover:scale-95 shadow">
                 <img src={instructor.img} className=" ml-4 mt-2" />
                 <CardContent>
                   <div className="flex items-center justify-between gap-1 mt-2">
@@ -280,9 +280,9 @@ const AboutUsPage = () => {
       {/* Partner Logos */}
       <section className=" py-16 px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap justify-between">
+          <div className="flex flex-wrap justify-between ">
             {logos.map((logo, index) => (
-              <div key={index} className="h-12 relative">
+              <div key={index} className="h-12 relative duration-200 transition-transform hover:scale-110">
                 <img src={logo} alt={`Partner ${index + 1}`} />
               </div>
             ))}
@@ -297,8 +297,7 @@ const AboutUsPage = () => {
               <img
                 src={facilities}
                 alt="Student using platform"
-                
-                className="object-cover rounded"
+                className="object-cover rounded duration-200 transition-transform hover:scale-95"
               />
             </div>
             <div>
@@ -373,7 +372,7 @@ const AboutUsPage = () => {
                 return (
                   <Card
                     key={index}
-                    className={`bg-[#EFFAF4] transition-all mt-3 p-3 duration-300 ${
+                    className={`bg-[#EFFAF4] border hover:scale-95 transition-all mt-3 p-3 duration-300 ${
                       isCenter
                         ? " z-10 scale-105 opacity-100"
                         : "scale-90 opacity-40"
@@ -385,7 +384,6 @@ const AboutUsPage = () => {
                           <img
                             src={testimonial.image}
                             alt={testimonial.name}
-                            
                             className="rounded-full object-cover"
                           />
                         </div>
